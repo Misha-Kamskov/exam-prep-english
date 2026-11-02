@@ -23,6 +23,7 @@ dependencies:
   # Navigation
   auto_route: ^11.2.0
   talker_flutter: ^5.2.0
+  get_it: ^9.3.0
 
 dev_dependencies:
   flutter_test:
