@@ -36,9 +36,6 @@ class AppBottomNavBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: colors.surface,
         borderRadius: BorderRadius.circular(26),
-        border: Border.all(
-          color: colors.outline.withValues(alpha: 0.5),
-        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(
@@ -46,8 +43,8 @@ class AppBottomNavBar extends StatelessWidget {
                   ? 0.08
                   : 0.18,
             ),
-            blurRadius: 24,
-            offset: const Offset(0, 6),
+            blurRadius: 12,
+            offset: const Offset(0, 12),
           ),
         ],
       ),
