@@ -1,4 +1,3 @@
-
 import 'package:auto_route/auto_route.dart';
 
 import '../../features/main/presentation/screens/main_screen.dart';
@@ -16,15 +15,8 @@ class AppRouter extends RootStackRouter {
       path: '/',
       initial: true,
       children: [
-        AutoRoute(
-          page: PracticeRoute.page,
-          path: 'practice',
-          initial: true,
-        ),
-        AutoRoute(
-          page: ProfileRoute.page,
-          path: 'profile',
-        ),
+        AutoRoute(page: PracticeRoute.page, path: 'practice', initial: true),
+        AutoRoute(page: ProfileRoute.page, path: 'profile'),
       ],
     ),
   ];

@@ -6,13 +6,10 @@ import '../../core/logging/talker_logger.dart';
 
 final getIt = GetIt.instance;
 
-Future<void> configureDependencies() async {
-
-  getIt.registerSingleton<Talker>(
-    TalkerFlutter.init(),
-  );
+void configureDependencies() {
+  getIt.registerSingleton<Talker>(TalkerFlutter.init());
 
   getIt.registerLazySingleton<AppLogger>(
-        () => AppTalkerLogger(getIt<Talker>()),
+    () => AppTalkerLogger(getIt<Talker>()),
   );
 }

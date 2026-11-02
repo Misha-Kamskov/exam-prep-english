@@ -5,10 +5,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import '../exception_widget_config.dart';
 
 abstract final class ExceptionUiMapper {
-  static ExceptionWidgetConfig map(
-      AppException exception,
-      ColorScheme colors,
-      ) {
+  static ExceptionWidgetConfig map(AppException exception, ColorScheme colors) {
     return switch (exception) {
       NetworkException() => ExceptionWidgetConfig(
         icon: LucideIcons.wifiOff,
@@ -32,13 +29,6 @@ abstract final class ExceptionUiMapper {
       ),
 
       UnknownException() => ExceptionWidgetConfig(
-        icon: LucideIcons.circleAlert,
-        title: 'Щось пішло не так',
-        message: 'Виникла непередбачена помилка.',
-        iconColor: colors.error,
-      ),
-
-      _ => ExceptionWidgetConfig(
         icon: LucideIcons.circleAlert,
         title: 'Щось пішло не так',
         message: 'Виникла непередбачена помилка.',

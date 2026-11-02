@@ -21,10 +21,7 @@ abstract final class ExceptionMapper {
         code: 'parsing_error',
       ),
 
-      _ => UnknownException(
-        message: error.toString(),
-        code: 'unknown_error',
-      ),
+      _ => UnknownException(message: error.toString(), code: 'unknown_error'),
     };
   }
 }

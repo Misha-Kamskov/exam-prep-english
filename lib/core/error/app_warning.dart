@@ -1,8 +1,5 @@
-abstract class AppWarning {
-  const AppWarning({
-    required this.message,
-    this.code,
-  });
+sealed class AppWarning {
+  const AppWarning({required this.message, this.code});
 
   final String message;
   final String? code;
@@ -14,8 +11,5 @@ abstract class AppWarning {
 }
 
 class RefreshWarning extends AppWarning {
-  const RefreshWarning({
-    required super.message,
-    super.code,
-  });
+  const RefreshWarning({required super.message, super.code});
 }

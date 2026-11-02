@@ -23,11 +23,7 @@ class AppTalkerLogger implements AppLogger {
   }
 
   @override
-  void error(
-      String message, {
-        Object? error,
-        StackTrace? stackTrace,
-      }) {
+  void error(String message, {Object? error, StackTrace? stackTrace}) {
     if (error != null) {
       _talker.handle(error, stackTrace, message);
     } else {

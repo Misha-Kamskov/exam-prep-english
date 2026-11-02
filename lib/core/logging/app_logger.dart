@@ -5,9 +5,5 @@ abstract interface class AppLogger {
 
   void warning(String message);
 
-  void error(
-      String message, {
-        Object? error,
-        StackTrace? stackTrace,
-      });
+  void error(String message, {Object? error, StackTrace? stackTrace});
 }

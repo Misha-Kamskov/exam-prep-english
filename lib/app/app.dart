@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'di/injection.dart';
 import 'router/app_router.dart';
 
 class App extends StatelessWidget {
   App({super.key});
 
-  final AppRouter _appRouter = AppRouter();
+  late final AppRouter _appRouter = getIt<AppRouter>();
 
   @override
   Widget build(BuildContext context) {

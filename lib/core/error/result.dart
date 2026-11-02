@@ -1,4 +1,3 @@
-
 import '../error/app_exception.dart';
 import 'app_warning.dart';
 
@@ -7,10 +6,7 @@ sealed class Result<T> {
 }
 
 final class Success<T> extends Result<T> {
-  const Success(
-      this.data, {
-        this.warning,
-      });
+  const Success(this.data, {this.warning});
 
   final T data;
   final AppWarning? warning;

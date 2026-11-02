@@ -1,10 +1,5 @@
-
-abstract class AppException implements Exception {
-
-  const AppException({
-    required this.message,
-    this.code,
-  });
+sealed class AppException implements Exception {
+  const AppException({required this.message, this.code});
 
   final String message;
   final String? code;
@@ -16,33 +11,19 @@ abstract class AppException implements Exception {
 }
 
 class NetworkException extends AppException {
-  const NetworkException({
-    required super.message,
-    super.code,
-  });
+  const NetworkException({required super.message, super.code});
 }
 
-
 class ServerException extends AppException {
-  const ServerException({
-    required super.message,
-    super.code,
-    this.statusCode,
-  });
+  const ServerException({required super.message, super.code, this.statusCode});
 
   final int? statusCode;
 }
 
 class ParsingException extends AppException {
-  const ParsingException({
-    required super.message,
-    super.code,
-  });
+  const ParsingException({required super.message, super.code});
 }
 
 class UnknownException extends AppException {
-  const UnknownException({
-    required super.message,
-    super.code,
-  });
+  const UnknownException({required super.message, super.code});
 }
