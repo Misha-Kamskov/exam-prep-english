@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app/app.dart';
 import 'app/app_initializer.dart';
 
-void main() {
-  AppInitializer.init();
+Future<void> main() async {
+  await AppInitializer.init();
   runApp(App());
 }

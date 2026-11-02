@@ -1,3 +1,4 @@
+import 'package:exam_prep_english/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'di/injection.dart';
@@ -11,6 +12,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       debugShowCheckedModeBanner: false,
       routerConfig: _appRouter.config(),
     );
