@@ -20,39 +20,53 @@ class AppBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
+
+    // Получаем безопасную зону один раз здесь
     final bottomInset = MediaQuery.viewPaddingOf(context).bottom;
 
     return Padding(
+      // Убираем лишний bottomInset, если Scaffold уже учитывает безопасную зону,
+      // либо оставляем небольшой внешний отступ (например, 8-10px)
       padding: EdgeInsets.fromLTRB(16, 0, 16, 8 + bottomInset),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: colors.surface,
-          borderRadius: BorderRadius.circular(22),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(
-                alpha: theme.brightness == Brightness.light ? 0.08 : 0.18,
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 430),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: colors.surface.withValues(alpha: 0.95),
+              borderRadius: BorderRadius.circular(22),
+              border: Border.all(
+                color: colors.outline.withValues(alpha: 0.2),
+                width: 1,
               ),
-              blurRadius: 12,
-              offset: const Offset(0, 8),
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Row(
-            children: [
-              for (var index = 0; index < _items.length; index++)
-                Expanded(
-                  child: _NavBarItem(
-                    item: _items[index],
-                    isSelected: currentIndex == index,
-                    onTap: () => onTap(index),
-                    theme: theme,
-                    colors: colors,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(
+                    alpha: theme.brightness == Brightness.light ? 0.08 : 0.18,
                   ),
+                  blurRadius: 16,
+                  offset: const Offset(0, 8),
                 ),
-            ],
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(6),
+              child: Row(
+                children: [
+                  for (var index = 0; index < _items.length; index++)
+                    Expanded(
+                      child: _NavBarItem(
+                        item: _items[index],
+                        isSelected: currentIndex == index,
+                        onTap: () => onTap(index),
+                        theme: theme,
+                        colors: colors,
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -92,29 +106,45 @@ class _NavBarItem extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: onTap,
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 220),
-            curve: Curves.easeOutCubic,
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            decoration: BoxDecoration(
-              color: isSelected
-                  ? colors.primary.withValues(alpha: 0.10)
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(16),
-            ),
+          hoverColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(item.icon, size: 20, color: foregroundColor),
-                const SizedBox(height: 3),
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeInOut,
+                  height: 32,
+                  width: 32,
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? colors.primary.withValues(alpha: 0.12)
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(11),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      item.icon,
+                      size: 20,
+                      color: foregroundColor,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 4),
                 Text(
                   item.label,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontWeight: FontWeight.w600,
+                    fontSize: 11,
+                    letterSpacing: -0.2,
                     color: foregroundColor,
-                    height: 1.1,
+                    height: 1.0,
                   ),
                 ),
               ],
