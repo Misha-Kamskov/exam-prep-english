@@ -125,7 +125,7 @@ class _NavBarItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 13,
+              horizontal: 15,
               vertical: 7,
             ),
             child: Column(
@@ -155,9 +155,7 @@ class _NavBarItem extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: AppTypography.fontFamily,
                     fontSize: 10,
-                    fontWeight: isSelected
-                        ? FontWeight.w600
-                        : FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     height: 1,
                     color: foregroundColor,
                   ),

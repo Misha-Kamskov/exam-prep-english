@@ -35,7 +35,7 @@ class PracticeScreen extends StatelessWidget {
                 onClick: () {
                   context.router.push(const OfficialTestsRoute());
                 },
-                icon: LucideIcons.fileText,
+                icon: LucideIcons.badgeCheck,
                 title: 'Офіційні тести НМТ і ЗНО',
                 description: 'Реальні варіанти минулих років з офіційними бланками відповідей',
               ),

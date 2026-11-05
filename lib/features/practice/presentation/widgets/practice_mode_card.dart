@@ -71,13 +71,6 @@ class PracticeModeCard extends StatelessWidget {
                           color: colors.onSurface,
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      Text(
-                        description,
-                        style: AppTypography.cardDescription.copyWith(
-                          color: colors.onSurfaceVariant,
-                        ),
-                      ),
                     ],
                   ),
                 ),
