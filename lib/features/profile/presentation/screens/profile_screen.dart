@@ -9,7 +9,6 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
-    final textTheme = theme.textTheme;
 
     return SafeArea(
       child: ColoredBox(color: colors.surface, child: Center()),

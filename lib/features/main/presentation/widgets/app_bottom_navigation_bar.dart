@@ -44,8 +44,8 @@ class AppBottomNavBar extends StatelessWidget {
               color: Colors.black.withValues(
                 alpha: isDark ? 0.18 : 0.08,
               ),
-              blurRadius: 20,
-              offset: const Offset(0, 6),
+              blurRadius: 12,
+              offset: const Offset(0, 10),
             ),
           ],
         ),
@@ -118,6 +118,10 @@ class _NavBarItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: InkWell(
           onTap: onTap,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          splashFactory: NoSplash.splashFactory,
           borderRadius: BorderRadius.circular(20),
           child: Padding(
             padding: const EdgeInsets.symmetric(

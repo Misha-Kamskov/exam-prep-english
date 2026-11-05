@@ -10,7 +10,7 @@ abstract final class AppTypography {
 
   static const TextStyle pageTitle = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 29,
+    fontSize: 32,
     fontWeight: FontWeight.w600,
     height: 1.0,
     letterSpacing: -0.725,
@@ -32,7 +32,7 @@ abstract final class AppTypography {
 
   static const TextStyle cardDescription = TextStyle(
     fontFamily: fontFamily,
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 1.375,
   );

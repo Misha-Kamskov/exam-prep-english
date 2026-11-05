@@ -27,15 +27,10 @@ class PracticeScreen extends StatelessWidget {
                 'Практика',
                 style: AppTypography.pageTitle.copyWith(
                   color: colors.onSurface,
+                  fontSize: 32
                 ),
               ),
-              const SizedBox(height: 4),
-              Text(
-                'Оберіть режим підготовки',
-                style: AppTypography.pageSubtitle.copyWith(
-                  color: colors.onSurfaceVariant,
-                ),
-              ),
+
               const SizedBox(height: 16),
 
               PracticeModeCard(
@@ -44,96 +39,9 @@ class PracticeScreen extends StatelessWidget {
                 title: 'Офіційні тести НМТ і ЗНО',
                 description: 'Реальні варіанти минулих років з офіційними бланками відповідей',
               ),
+
               const SizedBox(height: 10),
 
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.timer,
-                title: 'Симуляція іспиту',
-                description:
-                    'Повний блок англійської мови з таймером і автозавершенням',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.bookOpen,
-                title: 'Теорія та правила',
-                description:
-                    'Граматичні правила з поясненнями та прикладами вживання',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.timer,
-                title: 'Симуляція іспиту',
-                description:
-                'Повний блок англійської мови з таймером і автозавершенням',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.bookOpen,
-                title: 'Теорія та правила',
-                description:
-                'Граматичні правила з поясненнями та прикладами вживання',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.timer,
-                title: 'Симуляція іспиту',
-                description:
-                'Повний блок англійської мови з таймером і автозавершенням',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.bookOpen,
-                title: 'Теорія та правила',
-                description:
-                'Граматичні правила з поясненнями та прикладами вживання',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.timer,
-                title: 'Симуляція іспиту',
-                description:
-                'Повний блок англійської мови з таймером і автозавершенням',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.bookOpen,
-                title: 'Теорія та правила',
-                description:
-                'Граматичні правила з поясненнями та прикладами вживання',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.timer,
-                title: 'Симуляція іспиту',
-                description:
-                'Повний блок англійської мови з таймером і автозавершенням',
-              ),
-              const SizedBox(height: 10),
-
-              PracticeModeCard(
-                onClick: () {},
-                icon: LucideIcons.bookOpen,
-                title: 'Теорія та правила',
-                description:
-                'Граматичні правила з поясненнями та прикладами вживання',
-              ),
             ],
           ),
         ),
