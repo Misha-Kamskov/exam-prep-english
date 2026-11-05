@@ -27,6 +27,22 @@ class MainRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OfficialTestsScreen]
+class OfficialTestsRoute extends PageRouteInfo<void> {
+  const OfficialTestsRoute({List<PageRouteInfo>? children})
+    : super(OfficialTestsRoute.name, initialChildren: children);
+
+  static const String name = 'OfficialTestsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OfficialTestsScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [PracticeScreen]
 class PracticeRoute extends PageRouteInfo<void> {
   const PracticeRoute({List<PageRouteInfo>? children})

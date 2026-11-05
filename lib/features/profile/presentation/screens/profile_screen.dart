@@ -8,10 +8,12 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colors = theme.colorScheme;
 
     return SafeArea(
-      child: ColoredBox(color: colors.surface, child: Center()),
+      child: ColoredBox(
+        color: theme.scaffoldBackgroundColor,
+        child: const Center(),
+      ),
     );
   }
 }

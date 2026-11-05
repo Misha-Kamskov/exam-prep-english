@@ -12,7 +12,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colors = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -34,7 +33,7 @@ class MainScreen extends StatelessWidget {
           final bottomInset = MediaQuery.viewPaddingOf(context).bottom;
 
           return Scaffold(
-            backgroundColor: colors.surface,
+            backgroundColor: theme.scaffoldBackgroundColor,
             body: Stack(
               children: [
                 Positioned.fill(child: child),

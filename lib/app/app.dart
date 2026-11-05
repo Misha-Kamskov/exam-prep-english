@@ -13,9 +13,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: AppTheme.light,
-      darkTheme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       debugShowCheckedModeBanner: false,
       routerConfig: _appRouter.config(),
+      builder: (context, child) {
+        return ColoredBox(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          child: child!,
+        );
+      },
     );
   }
 }
